@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
-const PI_API_KEY = 'DÁN_API_KEY_CỦA_ANH_VÀO_ĐÂY'; // 🟡 Thay bằng Pi API Key thật
+const PI_API_KEY = 'nwhw1cakiuvel50l32vwog3oyy6x8rrywudku3prqpt2m1q3zalvxgn9ao9ua5av';
 const headers = {
   Authorization: `Key ${PI_API_KEY}`,
   'Content-Type': 'application/json',
