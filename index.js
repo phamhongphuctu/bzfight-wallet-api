@@ -11,7 +11,8 @@ app.use('/api', paymentRoutes);
 
 // 🔥 route gốc
 app.get('/', (req, res) => {
-  res.send('✅ BZFight Wallet API đang chạy!');
+  res.send('✅ BZFight Wallet API đã chạy thành công!');
+
 });
 
 app.listen(PORT, () => {
