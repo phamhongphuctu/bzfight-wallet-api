@@ -15,4 +15,8 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
   console.log('🚀 Server chạy tại http://localhost:' + PORT);
+  app.get('/', (req, res) => {
+    res.send('✅ BZFight Wallet API đang chạy!');
+  });
+  
 });
