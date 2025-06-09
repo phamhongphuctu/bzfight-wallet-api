@@ -3,13 +3,13 @@ const cors = require('cors');
 const paymentRoutes = require('./payment');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // 🔥 DÙNG process.env.PORT cho Render
 
 app.use(cors());
 app.use(express.json());
 app.use('/api', paymentRoutes);
 
-// ✅ Chỉ để MỘT cái app.get('/') ở đây
+// 🔥 route gốc
 app.get('/', (req, res) => {
   res.send('✅ BZFight Wallet API đang chạy!');
 });
