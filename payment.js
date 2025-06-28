@@ -2,7 +2,9 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
+// 🔐 Khóa API từ Pi Developer Portal (chỉ testnet hoặc mainnet thật)
 const PI_API_KEY = 'nwhw1cakiuvel50l32vwog3oyy6x8rrywudku3prqpt2m1q3zalvxgn9ao9ua5av';
+
 const headers = {
   Authorization: `Key ${PI_API_KEY}`,
   'Content-Type': 'application/json',
@@ -17,6 +19,7 @@ router.post('/approve-payment', async (req, res) => {
       {},
       { headers }
     );
+    console.log("🟢 Approve Success:", result.data);
     res.json({ success: true, data: result.data });
   } catch (err) {
     console.error('❌ Approve failed:', err.message);
@@ -33,6 +36,7 @@ router.post('/complete-payment', async (req, res) => {
       {},
       { headers }
     );
+    console.log("✅ Complete Success:", result.data);
     res.json({ success: true, data: result.data });
   } catch (err) {
     console.error('❌ Complete failed:', err.message);
@@ -41,3 +45,4 @@ router.post('/complete-payment', async (req, res) => {
 });
 
 module.exports = router;
+
